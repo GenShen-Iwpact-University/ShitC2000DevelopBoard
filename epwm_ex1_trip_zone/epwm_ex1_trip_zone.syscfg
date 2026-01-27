@@ -1,0 +1,257 @@
+/**
+ * These arguments were used when this file was generated. They will be automatically applied on subsequent loads
+ * via the GUI or CLI. Run CLI with '--help' for additional information on how to override these arguments.
+ * @cliArgs --device "F28004x" --part "F28004x_100PZ" --package "F28004x_100PZ" --context "system" --product "C2000WARE@6.00.01.00"
+ * @v2CliArgs --device "TMS320F280049C" --package "100PZ" --context "system" --product "C2000WARE@6.00.01.00"
+ * @versions {"tool":"1.26.2+4477"}
+ */
+
+/**
+ * Import the modules used in this configuration.
+ */
+const adc            = scripting.addModule("/driverlib/adc.js", {}, false);
+const adc1           = adc.addInstance();
+const adc2           = adc.addInstance();
+const adc3           = adc.addInstance();
+const aio            = scripting.addModule("/driverlib/aio.js", {}, false);
+const aio1           = aio.addInstance();
+const aio2           = aio.addInstance();
+const aio3           = aio.addInstance();
+const aio4           = aio.addInstance();
+const aio5           = aio.addInstance();
+const aio6           = aio.addInstance();
+const aio7           = aio.addInstance();
+const aio8           = aio.addInstance();
+const aio9           = aio.addInstance();
+const aio10          = aio.addInstance();
+const aio11          = aio.addInstance();
+const aio12          = aio.addInstance();
+const aio13          = aio.addInstance();
+const aio14          = aio.addInstance();
+const aio15          = aio.addInstance();
+const aio16          = aio.addInstance();
+const aio17          = aio.addInstance();
+const aio18          = aio.addInstance();
+const aio19          = aio.addInstance();
+const aio20          = aio.addInstance();
+const aio21          = aio.addInstance();
+const asysctl        = scripting.addModule("/driverlib/asysctl.js");
+const can            = scripting.addModule("/driverlib/can.js", {}, false);
+const can1           = can.addInstance();
+const device_support = scripting.addModule("/driverlib/device_support.js");
+const epwm           = scripting.addModule("/driverlib/epwm.js", {}, false);
+const epwm1          = epwm.addInstance();
+const epwm2          = epwm.addInstance();
+const epwm3          = epwm.addInstance();
+const i2c            = scripting.addModule("/driverlib/i2c.js", {}, false);
+const i2c1           = i2c.addInstance();
+const inputxbar      = scripting.addModule("/driverlib/inputxbar.js", {}, false);
+const inputxbar1     = inputxbar.addInstance();
+const pga            = scripting.addModule("/driverlib/pga.js", {}, false);
+const pga1           = pga.addInstance();
+const pga2           = pga.addInstance();
+const pga3           = pga.addInstance();
+const pga4           = pga.addInstance();
+const pga5           = pga.addInstance();
+const pga6           = pga.addInstance();
+const pga7           = pga.addInstance();
+const sci            = scripting.addModule("/driverlib/sci.js", {}, false);
+const sci1           = sci.addInstance();
+const spi            = scripting.addModule("/driverlib/spi.js", {}, false);
+const spi1           = spi.addInstance();
+const sysctl         = scripting.addModule("/driverlib/sysctl.js");
+
+/**
+ * Write custom configuration values to the imported modules.
+ */
+adc1.$name             = "myADC0";
+adc1.adcClockPrescaler = "ADC_CLK_DIV_2_0";
+adc1.soc0SampleWindow  = 8;
+
+adc2.$name             = "myADC1";
+adc2.adcBase           = "ADCB_BASE";
+adc2.adcClockPrescaler = "ADC_CLK_DIV_2_0";
+
+adc3.$name             = "myADC2";
+adc3.adcBase           = "ADCC_BASE";
+adc3.adcClockPrescaler = "ADC_CLK_DIV_2_0";
+adc3.soc1Channel       = "ADC_CH_ADCIN1";
+adc3.soc0SampleWindow  = 5;
+
+aio1.$name = "myAIO0";
+
+aio2.$name = "myAIO1";
+
+aio3.$name = "myAIO2";
+
+aio4.$name = "myAIO3";
+
+aio5.$name = "myAIO4";
+
+aio6.$name = "myAIO5";
+
+aio7.$name = "myAIO6";
+
+aio8.$name = "myAIO7";
+
+aio9.$name = "myAIO8";
+
+aio10.$name = "myAIO9";
+
+aio11.$name = "myAIO10";
+
+aio12.$name = "myAIO11";
+
+aio13.$name = "myAIO12";
+
+aio14.$name = "myAIO13";
+
+aio15.$name = "myAIO14";
+
+aio16.$name = "myAIO15";
+
+aio17.$name = "myAIO16";
+
+aio18.$name = "myAIO17";
+
+aio19.$name = "myAIO18";
+
+aio20.$name = "myAIO19";
+
+aio21.$name = "myAIO20";
+
+can1.$name                 = "myCAN0";
+can1.can.$assign           = "CANB";
+can1.can.can_rxPin.$assign = "GPIO17";
+can1.can.can_txPin.$assign = "GPIO12";
+
+const divider1       = system.clockTree["CLBCLKDIV"];
+divider1.divideValue = 1;
+
+const divider2       = system.clockTree["LOSPCP"];
+divider2.divideValue = 1;
+
+const divider3       = system.clockTree["PLL_ODIV"];
+divider3.divideValue = 2;
+
+const divider4       = system.clockTree["SYSCLKDIVSEL"];
+divider4.divideValue = 1;
+
+const mux4       = system.clockTree["XTAL_OR_X1"];
+mux4.inputSelect = "X1";
+
+epwm1.$name                  = "myEPWM0";
+epwm1.hrpwm_enable           = true;
+epwm1.hrpwm_autoConv         = true;
+epwm1.epwm.epwm_aPin.$assign = "GPIO28";
+epwm1.epwm.epwm_bPin.$assign = "GPIO13";
+
+epwm2.$name          = "myEPWM1";
+epwm2.hrpwm_enable   = true;
+epwm2.hrpwm_autoConv = true;
+
+epwm3.$name          = "myEPWM2";
+epwm3.hrpwm_enable   = true;
+epwm3.hrpwm_autoConv = true;
+
+i2c1.$name = "myI2C0";
+
+inputxbar1.$name = "myINPUTXBAR1";
+
+pga1.$name = "myPGA0";
+
+pga2.$name   = "myPGA1";
+pga2.pgaBase = "PGA2_BASE";
+
+pga3.$name   = "myPGA2";
+pga3.pgaBase = "PGA3_BASE";
+
+pga4.$name   = "myPGA3";
+pga4.pgaBase = "PGA4_BASE";
+
+pga5.$name   = "myPGA4";
+pga5.pgaBase = "PGA5_BASE";
+
+pga6.$name   = "myPGA5";
+pga6.pgaBase = "PGA6_BASE";
+
+pga7.$name   = "myPGA6";
+pga7.pgaBase = "PGA7_BASE";
+
+sci1.$name                 = "mySCI0";
+sci1.sci.$assign           = "SCIB";
+sci1.sci.sci_rxPin.$assign = "GPIO11";
+sci1.sci.sci_txPin.$assign = "GPIO56";
+sci1.rxQual.$name          = "myGPIOQUAL0";
+sci1.txQual.$name          = "myGPIOQUAL1";
+
+spi1.$name                   = "mySPI0";
+spi1.spi.$assign             = "SPIA";
+spi1.spi.spi_picoPin.$assign = "GPIO16";
+spi1.spi.spi_pociPin.$assign = "GPIO10";
+spi1.spi.spi_clkPin.$assign  = "GPIO9";
+spi1.spi.spi_ptePin.$assign  = "GPIO5";
+spi1.picoQual.$name          = "myGPIOQUAL6";
+spi1.pociQual.$name          = "myGPIOQUAL7";
+spi1.clkQual.$name           = "myGPIOQUAL8";
+spi1.pteQual.$name           = "myGPIOQUAL9";
+
+sysctl.splitCode = true;
+
+/**
+ * Pinmux solution for unlocked pins/peripherals. This ensures that minor changes to the automatic solver in a future
+ * version of the tool will not impact the pinmux you originally saw.  These lines can be completely deleted in order to
+ * re-solve from scratch.
+ */
+aio1.aioPin.$suggestSolution          = "AIO228";
+aio1.aioPin["AIO#"].$suggestSolution  = "A6/PGA5_OF";
+aio2.aioPin.$suggestSolution          = "AIO226";
+aio2.aioPin["AIO#"].$suggestSolution  = "B2/C6/PGA3_OF";
+aio3.aioPin.$suggestSolution          = "AIO242";
+aio3.aioPin["AIO#"].$suggestSolution  = "B3/VDAC";
+aio4.aioPin.$suggestSolution          = "AIO224";
+aio4.aioPin["AIO#"].$suggestSolution  = "A2/B6/PGA1_OF";
+aio5.aioPin.$suggestSolution          = "AIO233";
+aio5.aioPin["AIO#"].$suggestSolution  = "A3";
+aio6.aioPin.$suggestSolution          = "AIO239";
+aio6.aioPin["AIO#"].$suggestSolution  = "C4";
+aio7.aioPin.$suggestSolution          = "AIO237";
+aio7.aioPin["AIO#"].$suggestSolution  = "C0";
+aio8.aioPin.$suggestSolution          = "AIO244";
+aio8.aioPin["AIO#"].$suggestSolution  = "C2";
+aio9.aioPin.$suggestSolution          = "AIO232";
+aio9.aioPin["AIO#"].$suggestSolution  = "A1/DACB_OUT";
+aio10.aioPin.$suggestSolution         = "AIO231";
+aio10.aioPin["AIO#"].$suggestSolution = "A0/B15/C15/DACA_OUT";
+aio11.aioPin.$suggestSolution         = "AIO240";
+aio11.aioPin["AIO#"].$suggestSolution = "C5, PGA6_IN";
+aio12.aioPin.$suggestSolution         = "AIO238";
+aio12.aioPin["AIO#"].$suggestSolution = "C1";
+aio13.aioPin.$suggestSolution         = "AIO245";
+aio13.aioPin["AIO#"].$suggestSolution = "C3, PGA4_IN";
+aio14.aioPin.$suggestSolution         = "AIO234";
+aio14.aioPin["AIO#"].$suggestSolution = "A5";
+aio15.aioPin.$suggestSolution         = "AIO225";
+aio15.aioPin["AIO#"].$suggestSolution = "A4/B8/PGA2_OF";
+aio16.aioPin.$suggestSolution         = "AIO229";
+aio16.aioPin["AIO#"].$suggestSolution = "A8/PGA6_OF";
+aio17.aioPin.$suggestSolution         = "AIO236";
+aio17.aioPin["AIO#"].$suggestSolution = "A9";
+aio18.aioPin.$suggestSolution         = "AIO227";
+aio18.aioPin["AIO#"].$suggestSolution = "B4/C8/PGA4_OF";
+aio19.aioPin.$suggestSolution         = "AIO230";
+aio19.aioPin["AIO#"].$suggestSolution = "A10/B1/C10/PGA7_OF";
+aio20.aioPin.$suggestSolution         = "AIO241";
+aio20.aioPin["AIO#"].$suggestSolution = "B0";
+aio21.aioPin.$suggestSolution         = "AIO246";
+aio21.aioPin["AIO#"].$suggestSolution = "C14";
+epwm1.epwm.$suggestSolution           = "EPWM7";
+epwm2.epwm.$suggestSolution           = "EPWM4";
+epwm2.epwm.epwm_aPin.$suggestSolution = "GPIO6";
+epwm2.epwm.epwm_bPin.$suggestSolution = "GPIO7";
+epwm3.epwm.$suggestSolution           = "EPWM2";
+epwm3.epwm.epwm_aPin.$suggestSolution = "GPIO2";
+epwm3.epwm.epwm_bPin.$suggestSolution = "GPIO3";
+i2c1.i2c.$suggestSolution             = "I2CA";
+i2c1.i2c.i2c_sdaPin.$suggestSolution  = "GPIO0";
+i2c1.i2c.i2c_sclPin.$suggestSolution  = "GPIO1";
