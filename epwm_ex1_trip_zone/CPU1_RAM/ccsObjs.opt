@@ -1,0 +1,10 @@
+"./epwm_ex1_trip_zone.obj"
+"./syscfg/board.obj"
+"./syscfg/device.obj"
+"./syscfg/sysctl_config.obj"
+"./syscfg/c2000ware_libraries.obj"
+"./f28004x_codestartbranch.obj"
+"../28004x_generic_ram_lnk.cmd"
+"D:/CCS/ti/C2000/C2000Ware_6_00_01_00/driverlib/f28004x/driverlib/ccs/Debug/driverlib.lib"
+-lc2000ware_libraries.cmd.genlibs
+-llibc.a
